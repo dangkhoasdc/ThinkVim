@@ -88,7 +88,7 @@ Here are some plugins that are not installed in Thinkvim, but retain their confi
     let g:NERDTreeSyntaxDisableDefaultExtensions = 1
     let g:NERDTreeDisableExactMatchHighlight = 1
     let g:NERDTreeDisablePatternMatchHighlight = 1
-    let g:NERDTreeSyntaxEnabledExtensions = ['go', 'py', 'html', 'css', 'jsx', 'js', 'vim','json','md','c','cpp','java','php','groovy']
+    let g:NERDTreeSyntaxEnabledExtensions = ['py', 'html', 'css', 'jsx', 'js', 'vim','json','md','c','cpp','java','php','groovy']
 - { repo: Xuyuanp/nerdtree-git-plugin, on_source: nerdtree }
 ```
 
@@ -201,7 +201,6 @@ Extensions are more powerful than a configured language server. Check out
 - **[coc-vimlsp](https://github.com/iamcco/coc-vimlsp)** for `viml`.
 - **[coc-xml](https://github.com/fannheyward/coc-xml)** for `xml`, use [lsp4xml](https://github.com/angelozerr/lsp4xml).
 - **[coc-elixir](https://github.com/amiralies/coc-elixir)** for `elixir`, based on [elixir-ls](https://github.com/JakeBecker/elixir-ls/).
-- **[coc-tabnine](https://github.com/neoclide/coc-tabnine)** for [tabnine](https://tabnine.com/).
 - **[coc-powershell](https://github.com/yatli/coc-powershell)** for PowerShellEditorService integration.
 - **[coc-omnisharp](https://github.com/yatli/coc-omnisharp)** for `csharp` and `visualbasic`.
 
@@ -254,8 +253,6 @@ or use [coc-marketplace](https://github.com/fannheyward/coc-marketplace), which 
 | ] + a       | Normal  | Ale pre                                 |
 | [ + c       | Normal  | coc next                                |
 | ] + c       | Normal  | coc prev                                |
-| ] + ]       | Normal  | jump to prev go func                    |
-| [ + [       | Normal  | jump to next go func                    |
 | gc          | Normal  | caw.vim comment                         |
 | gcc         | Normal  | caw.vim uncomment                       |
 | ga          | Normal  | EasyAlign                               |
@@ -267,8 +264,6 @@ or use [coc-marketplace](https://github.com/fannheyward/coc-marketplace), which 
 | srb         | Normal  | vim-sandwich prefix +{iw/is/ip}+{i/f/t} |
 | v           | Visual  | vim-expand-region                       |
 | V           | Visual  | vim-expand-region                       |
-| zl          | Normal  | Denite Outline for golang               |
-| zT          | Normal  | Denite Goroot for golang                |
 
 </p>
 </details>
@@ -352,16 +347,11 @@ or use [coc-marketplace](https://github.com/fannheyward/coc-marketplace), which 
 <details><summary><code>LocalLeaderKey</code>👈 Click</summary>
 <p>
 
-| Keys                 | Mode   | Description        |
-| -------------------- | ------ | ------------------ |
-| `<LocalLeader>` + t  | Normal | Open Tagbar        |
-| `<LocalLeader>` + r  | Normal | QuickRun           |
-| `<LocalLeader>` + v  | Normal | Open Vista         |
-| `<LocalLeader>` + gi | Normal | vim-go GoImpl      |
-| `<LocalLeader>` + gd | Normal | vim-go GoDescribe  |
-| `<LocalLeader>` + gc | Normal | vim-go GoCallees   |
-| `<LocalLeader>` + gC | Normal | vim-go GoCallers   |
-| `<LocalLeader>` + gs | Normal | vim-go GoCallstack |
+| Keys                | Mode   | Description |
+| ------------------- | ------ | ----------- |
+| `<LocalLeader>` + t | Normal | Open Tagbar |
+| `<LocalLeader>` + r | Normal | QuickRun    |
+| `<LocalLeader>` + v | Normal | Open Vista  |
 
 </p>
 </details>

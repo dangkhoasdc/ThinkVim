@@ -27,6 +27,7 @@
 - neovim >= 0.4.0（cause i used floatwindow,this feature support by neovim 0.4.0 above)
 - python3 support
   - pip3 install --user pynvim
+  - pip install --user Send2Trash
 - node and yarn
 - NerdFont
 
@@ -126,7 +127,6 @@ git clone --depth=1 https://github.com/hardcoreplayers/ThinkVim.git ~/.config/nv
 | [Vimjas/vim-python-pep8-index](https://github.com/Vimjas/vim-python-pep8-index)                       | A nicer Python indentation style                                                   |
 | [vim-scripts/python_match.vx](https://github.com/vim-scripts/python_match)                            | Extend the % motion for Python files                                               |
 | [tmhedberg/SimpylFold](https://github.com/tmhedberg/SimpylFold)                                       | No-BS Python code folding                                                          |
-| [fatih/vim-go](https://github.com/fatih/vim-go)                                                       | go development                                                                     |
 | [elzr/vim-json](https://github.com/elzr/vim-json)                                                     | json                                                                               |
 | [cespare/vim-toml](https://github.com/cespare/vim-toml)                                               | toml                                                                               |
 | [vim-scripts/xml.vim](https://github.com/vim-scripts/xml.vim)                                         | xml                                                                                |
@@ -165,33 +165,3 @@ git clone --depth=1 https://github.com/hardcoreplayers/ThinkVim.git ~/.config/nv
 - check the [tutorial](/tutorial/tutorial.md) to know more about ThinkVim
 - check the [wiki gitworkflow](https://github.com/taigacute/ThinkVim/wiki/Git-WorkFlow)
 
-## Backers
-
-Do you like ThinkVim? keep it alive by [donating funds](https://salt.bountysource.com/teams/thinkvim-taigacute)😘!
-
-<a href="https://github.com/emeentag" target="_blank" title="emeentag">
-  <img src="https://github.com/emeentag.png?size=64" width="64" height="64" alt="emeentag">
-</a>
-<a href="https://github.com/dewoller" target="_blank" title="dewoller">
-  <img src="https://github.com/dewoller.png?size=64" width="64" height="64" alt="dewoller">
-</a>
-<a href="https://github.com/baIIoon" target="_blank" title="balloon">
-  <img src="https://github.com/baIIoon.png?size=64" width="64" height="64" alt="balloon">
-</a>
-<a href="https://github.com/gabriel-pena" target="_blank" title="gabriel-pena">
-  <img src="https://github.com/gabriel-pena.png?size=64" width="64" height="64" alt="gabriel-pena">
-</a>
-
-<a href="https://github.com/gstormlee" target="_blank" title="gstormlee">
-  <img src="https://github.com/gstormlee.png?size=64" width="64" height="64" alt="gstormlee">
-</a>
-<a href="https://github.com/xiaomabetter" target="_blank" title="xiaomabetter">
-  <img src="https://github.com/xiaomabetter.png?size=64" width="64" height="64" alt="xiaomabetter">
-</a>
-<img src="https://github.com/taigacute/IMG/blob/master/wechat/mm_reward_qrcode_1556454268864.png" width="40%"  height="40%">
-
-## Thanks
-
-- [chemzqm](https://github.com/chemzqm)
-- [rafi](https://github.com/rafi/vim-config)
-- [Shougo](https://github.com/Shougo)

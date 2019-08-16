@@ -54,7 +54,7 @@
       endfunction
 
 - repo: junegunn/vim-easy-align
-  on_ft: [vim,json,go,html,js,jsx,py,css,less,tmpl,toml,xml,sql,Dockerfile]
+  on_ft: [vim,json,html,js,jsx,py,css,less,tmpl,toml,xml,sql,Dockerfile]
 
 
 - repo: yuttie/comfortable-motion.vim
@@ -62,16 +62,6 @@
   hook_add: |
         let g:comfortable_motion_no_default_key_mappings = 1
         let g:comfortable_motion_impulse_multiplier = 1
-
-- repo: rizzatti/dash.vim
-  on_map: { n: <Plug> }
-  hook_add: |
-      let g:dash_map = {
-        \ 'javascript': ['javascript', 'NodeJS'],
-        \ 'javascript.jsx': ['react'],
-        \ 'html': ['html', 'svg'],
-        \ 'go' : 'Go',
-        \}
 
 - repo: thinca/vim-quickrun
   on_cmd: QuickRun
@@ -173,10 +163,6 @@
   on_ft: json
   hook_add: let g:vim_json_syntax_conceal = 0
 
-- repo: fatih/vim-go
-  on_ft: go
-  hook_source: source  $VIM_PATH/core/plugins/vim-go.vim
-
 - repo: tpope/vim-markdown
   on_ft: markdown
   hook_add: |
@@ -186,8 +172,7 @@
           \ 'css',
           \ 'javascript',
           \ 'js=javascript',
-          \ 'go',
-          \]
+          \ ]
 
 # }}}
 
@@ -227,7 +212,7 @@
         \}
 
 - repo: luochen1990/rainbow
-  on_ft: [python,javascript,jsx,javascript.jsx,html,css,go,vim,toml]
+  on_ft: [python,javascript,jsx,javascript.jsx,html,css,vim,toml]
   hook_source: let g:rainbow_active = 1
 
 - repo: Shougo/echodoc.vim
@@ -246,7 +231,7 @@
   on_ft: [markdown,pandoc.markdown,rmd]
   hook_post_source: 'call mkdp#util#install()'
   hook_source: |
-      let g:mkdp_auto_start = 1
+      let g:mkdp_auto_start = 0
 
 - repo: junegunn/goyo.vim
   on_cmd: Goyo

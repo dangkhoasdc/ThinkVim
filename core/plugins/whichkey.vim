@@ -20,7 +20,6 @@ let g:which_key_map = {
             \ 'c' : 'keep current buffer',
             \ 'o' : 'kill {numbers or name} buffer',
             \ },
-      \ 'e' : 'open file explorer' ,
       \ '-' : 'choose window by {prompt char}' ,
       \ 'd' : 'search cursor word on Dash.app' ,
       \ 'G' : 'distraction free writing' ,
@@ -35,6 +34,7 @@ let g:which_key_map = {
             \ 'v' : 'search outline',
             \ },
       \ 'm' : 'open mundotree' ,
+      \ 'e' : 'open defx',
       \ 'w' : 'save file',
       \ 's' : 'open startify screen',
       \ 'p' : 'edit pluginsconfig {filename}',
@@ -90,14 +90,6 @@ let g:which_key_localmap ={
       \ 'v'    : 'open vista show outline',
       \ 'r'    : 'quick run',
       \ 'm'    : 'toolkit Menu',
-      \ 'g' : {
-            \ 'name' : '+golang-toolkit',
-            \ 'i'    : 'go impl',
-            \ 'd'    : 'go describe',
-            \ 'c'    : 'go callees',
-            \ 'C'    : 'go callers',
-            \ 's'    : 'go callstack',
-            \ },
       \ }
 
 let g:which_key_rsbgmap = {
@@ -106,7 +98,6 @@ let g:which_key_rsbgmap = {
       \ 'c'    : 'coc nextdiagnostics',
       \ 'b'    : 'next buffer',
       \ 'g'    : 'coc gitnextchunk',
-      \ ']'    : 'jump prefunction-golang',
       \ }
 
 
@@ -116,5 +107,4 @@ let g:which_key_lsbgmap = {
       \ 'c'    : 'coc prediagnostics',
       \ 'b'    : 'pre buffer',
       \ 'g'    : 'coc gitprevchunk',
-      \ '['    : 'jump nextfunction-golang',
       \ }
