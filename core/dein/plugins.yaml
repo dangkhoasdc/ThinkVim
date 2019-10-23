@@ -3,8 +3,14 @@
 
 # StartUp Plugins{{{
 - repo: Shougo/dein.vim
-- repo: honza/vim-snippets
 - repo: taigacute/spaceline.vim
+- repo: SirVer/ultisnips
+  hook_add: |
+        let g:UltiSnipsExpandTrigger = "<tab>"
+        let g:UltiSnipsListSnippets  = "<c-tab>"
+        let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+        let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+- repo: /home/khoa/development/vim-snippets
 
 #}}}
 
@@ -102,10 +108,6 @@
   on_cmd: Defx
   hook_source: source  $VIM_PATH/core/plugins/defx.vim
 
-- repo: kristijanhusak/defx-git
-  on_source: defx.nvim
-  hook_source: source  $VIM_PATH/core/plugins/defx-git.vim
-
 - repo: kristijanhusak/defx-icons
   on_source: defx.nvim
 
@@ -144,7 +146,6 @@
 # Language{{{
 
 - { repo: honza/dockerfile.vim, on_ft: Dockerfile }
-- { repo: junegunn/vim-emoji, on_ft: [markdown,vim] }
 
 - { repo: Vimjas/vim-python-pep8-indent, on_ft: python }
 - { repo: tmhedberg/SimpylFold, on_ft: python }
@@ -176,6 +177,9 @@
 
 - repo: /home/khoa/development/vimnw/
   script_type: ftplugin
+  hook_add: |
+      let g:vimtex_enabled = 1
+      let g:tex_flavor='latex'
 
 # }}}
 
@@ -265,7 +269,12 @@
   depends: vim-textobj-user
   on_map: { ox: <Plug> }
   hook_add:  let g:textobj_multiblock_no_default_key_mappings = 1
-  
+
+- repo: ntpeters/vim-better-whitespace
+  hook_add: |
+        let g:better_whitespace_enabled = 1
+        let g:strip_whitespace_on_save = 1
+        let g:strip_whitespace_confirm = 0
 
 # }}}
 

@@ -21,6 +21,9 @@ colorscheme  srcery
 
 " let g:space_vim_transp_bg = 1
 " colorscheme space_vim_theme
+"
+highlight ColorColumn ctermbg=gray
+set colorcolumn=80
 
 " Vim Colors
 " ---------------------------------------------------------

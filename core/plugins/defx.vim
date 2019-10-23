@@ -5,8 +5,8 @@ call defx#custom#option('_', {
 	\ 'split': 'vertical',
 	\ 'direction': 'topleft',
 	\ 'show_ignored_files': 0,
+    \ 'ignored_files': '*.pyc,.*,*.aux,*.bbl,*.aux,*.lof,*.log,*.lot,*.fls,*.toc,*.fmt,*.fot,*.cb,*.cb2,.*.lb,*.bbl,*.bcf,*.blg,*-blx.aux,*-blx.bib,*.run.xml,*.fdb_latexmk,*.synctex,*.synctex(busy),*.synctex.gz,*.synctex.gz(busy),*.pdfsync,*.exe,*.out,*.app',
 	\ })
-
 
 " Events
 " ---
@@ -92,7 +92,7 @@ function! s:defx_mappings() abort
 
 	nnoremap <silent><buffer><expr> <CR>  defx#do_action('drop')
 	nnoremap <silent><buffer><expr> l     <SID>defx_toggle_tree()
-	nnoremap <silent><buffer><expr> h     defx#async_action('cd', ['..'])
+	nnoremap <silent><buffer><expr> u     defx#async_action('cd', ['..'])
 	nnoremap <silent><buffer><expr> st    defx#do_action('multi', [['drop', 'tabnew'], 'quit'])
 	nnoremap <silent><buffer><expr> sg    defx#do_action('multi', [['drop', 'vsplit'], 'quit'])
 	nnoremap <silent><buffer><expr> sv    defx#do_action('multi', [['drop', 'split'], 'quit'])

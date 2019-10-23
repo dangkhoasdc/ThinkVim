@@ -60,7 +60,6 @@ set shiftround
 set hidden
 set shortmess=aFc
 set signcolumn=yes
-set completefunc=emoji#complete
 set completeopt =longest,menu
 set completeopt-=preview
 set list
@@ -78,6 +77,7 @@ set matchtime=1     " Tenths of a second to show the matching paren
 set cpoptions-=m    " showmatch will wait 0.5s or until a char is typed
 set grepprg=rg\ --vimgrep\ $*
 set wildignore+=*.so,*~,*/.git/*,*/.svn/*,*/.DS_Store,*/tmp/*
+set inccommand=split
 
 if has('conceal')
 	set conceallevel=3 concealcursor=niv

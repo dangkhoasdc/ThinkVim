@@ -1,9 +1,9 @@
-"CoC configlet 
+"CoC configlet
 let g:coc_snippet_next = '<TAB>'
 let g:coc_snippet_prev = '<S-TAB>'
-let g:coc_status_error_sign = '•'
+let g:coc_status_error_sign = 'x'
 let g:coc_status_warning_sign = '•'
-let g:coc_global_extensions =['coc-html','coc-css','coc-snippets','coc-prettier','coc-eslint','coc-emmet','coc-tsserver','coc-pairs','coc-json','coc-python','coc-imselect','coc-highlight','coc-git','coc-emoji','coc-lists','coc-post','coc-stylelint','coc-yaml','coc-template','coc-marketplace','coc-gitignore','coc-yank']
+let g:coc_global_extensions =['coc-html','coc-css','coc-snippets','coc-prettier','coc-eslint','coc-emmet','coc-tsserver','coc-pairs','coc-json','coc-python','coc-imselect','coc-highlight', 'coc-lists','coc-post','coc-stylelint','coc-yaml','coc-template','coc-gitignore','coc-yank']
 
 augroup MyAutoCmd
   autocmd!
@@ -12,9 +12,6 @@ augroup MyAutoCmd
   " Update signature help on jump placeholder
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
-
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
 
 "Use tab for trigger completion with characters ahead and navigate
 inoremap <silent><expr> <TAB>

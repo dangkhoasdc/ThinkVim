@@ -62,7 +62,7 @@ if dein#tap('coc.nvim')
         nmap <silent> <C-c> <Plug>(coc-cursors-position)
         nmap <silent> <C-m> <Plug>(coc-cursors-word)
         xmap <silent> <C-m> <Plug>(coc-cursors-range)
-        nnoremap <silent> <leader>cm ::CocSearch -w 
+        nnoremap <silent> <leader>cm ::CocSearch -w
         " use normal command like `<leader>xi(`
         nmap <leader>x  <Plug>(coc-cursors-operator)
 
@@ -108,7 +108,7 @@ if dein#tap('gina.vim')
 endif
 
 if dein#tap('vim-mundo')
-    nnoremap <silent> <leader>m :MundoToggle<CR>
+    nnoremap <silent> <F2> :MundoToggle<CR>
 endif
 
 if dein#tap('vim-choosewin')
@@ -157,9 +157,9 @@ if dein#tap('goyo.vim')
 endif
 
 if dein#tap('defx.nvim')
-        nnoremap <silent> <F5>
+        nnoremap <silent> <F3>
                \ :<C-u>Defx -resume -toggle -buffer-name=tab`tabpagenr()`<CR>
-         nnoremap <silent> <leader><e>
+         nnoremap <silent> <leader>e
 				\ :<C-u>Defx -resume -toggle -search=`expand('%:p')` `getcwd()`<CR>
 endif
 

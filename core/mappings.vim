@@ -2,7 +2,6 @@
 inoremap <C-w> <C-[>diwa
 inoremap <C-h> <BS>
 inoremap <C-d> <Del>
-inoremap <C-k>  <ESC>d$a
 inoremap <C-u> <C-G>u<C-U>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
@@ -27,7 +26,7 @@ imap <C-Q> <esc>:wq<CR>
 
 "buffer
 nnoremap <leader>bc :BufOnly<CR>
-nnoremap <Leader>bo :BufOnly 
+nnoremap <Leader>bo :BufOnly
 
 "insert a newline
 inoremap <C-O> <Esc>o
