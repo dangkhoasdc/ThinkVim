@@ -4,10 +4,10 @@ call denite#custom#option('_', {
 		\ 'cursor_wrap': v:true,
 		\ 'highlight_filter_background': 'DeniteFilter',
 		\ 'highlight_matched_char': 'Underlined',
-		\ 'matchers': 'matcher/fruzzy',
+		\ 'matchers': 'matcher/fuzzy',
 		\ 'prompt': 'λ ',
 		\ 'split': 'floating',
-		\ 'start_filter': v:true,
+		\ 'start_filter': v:false,
 		\ 'statusline': v:false,
 		\ })
 function! s:denite_detect_size() abort
@@ -39,7 +39,7 @@ call denite#custom#option('mpc', { 'winheight': 20 })
 " MATCHERS
 " Default is 'matcher/fuzzy'
 call denite#custom#source('tag', 'matchers', ['matcher/substring'])
-call denite#custom#source('file/rec', 'matchers', ['matcher/fruzzy'])
+call denite#custom#source('file/rec', 'matchers', ['matcher/fuzzy'])
 
 if has('nvim') && &runtimepath =~# '\/cpsm'
 	call denite#custom#source(

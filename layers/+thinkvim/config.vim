@@ -44,8 +44,8 @@ if dein#tap('coc.nvim')
         nmap <silent> gy <Plug>(coc-type-definition)
         nmap <silent> gi <Plug>(coc-implementation)
         nmap <silent> gr <Plug>(coc-references)
-        " Use K for show documentation in preview window
-        nnoremap <silent> K :call <sid>show_documentation()<cr>
+        " Use K for show documentation in float window
+        nnoremap <silent> K :call CocActionAsync('doHover')<CR>
         " use <c-space> for trigger completion.
         inoremap <silent><expr> <c-space> coc#refresh()
         nmap [g <Plug>(coc-git-prevchunk)
@@ -58,26 +58,35 @@ if dein#tap('coc.nvim')
         " float window scroll
 		nnoremap <expr><C-f> coc#util#has_float() ? coc#util#float_scroll(1) : "\<C-f>"
 		nnoremap <expr><C-b> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-b>"
-        " multiple cursors session
+        " multiple cursors
         nmap <silent> <C-c> <Plug>(coc-cursors-position)
-        nmap <silent> <C-m> <Plug>(coc-cursors-word)
-        xmap <silent> <C-m> <Plug>(coc-cursors-range)
+        nmap <expr> <silent> <C-m> <SID>select_current_word()
+        xmap <silent> <C-d> <Plug>(coc-cursors-range)
         nnoremap <silent> <leader>cm ::CocSearch -w
         " use normal command like `<leader>xi(`
         nmap <leader>x  <Plug>(coc-cursors-operator)
 
-        function! s:show_documentation()
-            if (index(['vim','help'], &filetype) >= 0)
-                execute 'h '.expand('<cword>')
-            else
-                call CocAction('doHover')
+        function! s:select_current_word()
+            if !get(g:, 'coc_cursors_activated', 0)
+                return "\<Plug>(coc-cursors-word)"
             endif
-        endfunction
+            return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
+        endfunc
+
+        nnoremap <silent> <leader>cm ::CocSearch -w 
+        nnoremap <silent> <leader>cw ::CocSearch  
+        " use normal command like `<leader>xi(`
+        nmap <leader>x  <Plug>(coc-cursors-operator)
+        " coc-explorer
+        noremap <silent> <leader>j :execute 'CocCommand explorer' .
+            \ ' --toggle' .
+            \ ' --sources=buffer+,file+' .
+            \ ' --file-columns=git,selection,icon,clip,indent,filename,size ' . expand('%:p:h')<CR>
 endif
 
 if dein#tap('fzf.vim')
         nnoremap <silent> <leader>fc :Colors<CR>
-        nnoremap <silent> <leader>fb :Buffers<CR>
+        nnoremap <silent> <leader>bb :Buffers<CR>
         nnoremap <silent> <leader>ff :call Fzf_dev()<CR>
         nnoremap <silent> <leader>fr :Rg<CR>
         nnoremap <silent> <leader>fw :Rg <C-R><C-W><CR>
@@ -122,8 +131,8 @@ if dein#tap('accelerated-jk')
 endif
 
 if dein#tap('caw.vim')
-	function! InitCaw() abort
-		if !&l:modifiable
+    function! InitCaw() abort
+		if ! &l:modifiable
 			silent! nunmap <buffer> gc
 			silent! xunmap <buffer> gc
 			silent! nunmap <buffer> gcc
@@ -189,10 +198,6 @@ if dein#tap('vista.vim')
         nnoremap <silent><leader>fv     :Vista finder coc<CR>
 endif
 
-if dein#tap('tagbar')
-        nnoremap <silent><localleader>t :TagbarToggle<CR>
-endif
-
 if dein#tap('ale')
         nmap [a <Plug>(ale_next_wrap)
         nmap ]a <Plug>(ale_previous_wrap)
@@ -213,6 +218,10 @@ endif
 
 if dein#tap('vim-smartchr')
     inoremap <expr> , smartchr#one_of(',', ',')
+    autocmd FileType go inoremap <buffer><expr> ;
+            \ smartchr#loop(':=',';')
+    autocmd FileType go inoremap <buffer> <expr> .
+          \ smartchr#loop('.', '<-', '->','...')
 endif
 
 if dein#tap('vim-niceblock')
@@ -238,24 +247,6 @@ if dein#tap('vim-sandwich')
      xmap is <Plug>(textobj-sandwich-query-i)
      omap as <Plug>(textobj-sandwich-query-a)
      xmap as <Plug>(textobj-sandwich-query-a)
-endif
-
-if dein#tap('actionmenu.nvim')
-    nmap <silent> <LocalLeader>s :call ActionMenuCodeActions()<CR>
-    let s:code_actions = []
-
-func! ActionMenuCodeActions() abort
-  let s:code_actions = CocAction('codeActions')
-  let l:menu_items = map(copy(s:code_actions), { index, item -> item['title'] })
-  call actionmenu#open(l:menu_items, 'ActionMenuCodeActionsCallback')
-endfunc
-
-func! ActionMenuCodeActionsCallback(index, item) abort
-  if a:index >= 0
-    let l:selected_code_action = s:code_actions[a:index]
-    let l:response = CocAction('doCodeAction', l:selected_code_action)
-  endif
-endfunc
 endif
 
 if dein#tap('vim-operator-replace')

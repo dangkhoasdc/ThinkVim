@@ -14,7 +14,7 @@ call defx#custom#option('_', {
 augroup user_plugin_defx
 	autocmd!
 
-	autocmd DirChanged * call s:defx_refresh_cwd(v:event)
+	" autocmd DirChanged * call s:defx_refresh_cwd(v:event)
 
 	" Delete defx if it's the only buffer left in the window
 	" autocmd WinEnter * if &filetype == 'defx' && winnr('$') == 1 | bd | endif
@@ -94,8 +94,8 @@ function! s:defx_mappings() abort
 	nnoremap <silent><buffer><expr> l     <SID>defx_toggle_tree()
 	nnoremap <silent><buffer><expr> u     defx#async_action('cd', ['..'])
 	nnoremap <silent><buffer><expr> st    defx#do_action('multi', [['drop', 'tabnew'], 'quit'])
-	nnoremap <silent><buffer><expr> sg    defx#do_action('multi', [['drop', 'vsplit'], 'quit'])
-	nnoremap <silent><buffer><expr> sv    defx#do_action('multi', [['drop', 'split'], 'quit'])
+	nnoremap <silent><buffer><expr> s     defx#do_action('open', 'botright vsplit')
+	nnoremap <silent><buffer><expr> i     defx#do_action('open', 'botright split')
 	nnoremap <silent><buffer><expr> P     defx#do_action('open', 'pedit')
 	nnoremap <silent><buffer><expr> K     defx#do_action('new_directory')
 	nnoremap <silent><buffer><expr> N     defx#do_action('new_multiple_files')

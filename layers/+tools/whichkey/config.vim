@@ -17,8 +17,9 @@ let g:which_key_map = {
             \ },
       \ 'b' : {
             \ 'name' : '+buffer',
+            \ 'b' : 'buffer list',
             \ 'c' : 'keep current buffer',
-            \ 'o' : 'kill {numbers or name} buffer',
+            \ 'o' : 'keep input buffer',
             \ },
       \ '-' : 'choose window by {prompt char}' ,
       \ 'd' : 'search cursor word on Dash.app' ,
@@ -26,7 +27,6 @@ let g:which_key_map = {
       \ 'F' : 'find current file' ,
       \ 'f' : {
             \ 'name' : '+search {files cursorword word outline}',
-            \ 'b' : 'buffer list',
             \ 'f' : 'find file',
             \ 'r' : 'search {word}',
             \ 'c' : 'change colorscheme',
@@ -36,6 +36,7 @@ let g:which_key_map = {
       \ 'm' : 'open mundotree' ,
       \ 'e' : 'open defx',
       \ 'w' : 'save file',
+      \ 'j' : 'open coc-explorer',
       \ 's' : 'open startify screen',
       \ 'p' : 'edit pluginsconfig {filename}',
       \ 'x' : 'coc cursors operate',
@@ -108,3 +109,8 @@ let g:which_key_lsbgmap = {
       \ 'b'    : 'pre buffer',
       \ 'g'    : 'coc gitprevchunk',
       \ }
+
+let s:current_colorscheme = get(g:,"colors_name","")
+if  s:current_colorscheme == "base16-default-dark"
+    highlight WhichKeySeperator guibg=NONE ctermbg=NONE guifg=#a1b56c ctermfg=02
+endif

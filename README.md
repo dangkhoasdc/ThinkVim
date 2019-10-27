@@ -4,15 +4,15 @@
 <img src="https://github.com/taigacute/IMG/blob/master/thinkvim/gruvbox.png" width="500" height="400">
 </div>
 
-## Commic Custom
 
-| ACG                                                                                                       | Spaceline                                                                                                 |
+
+|                                                                                                       |                                                                                                |
 | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| <img src="https://github.com/taigacute/IMG/blob/master/thinkvim/vim-space.png" width="480"  height="300"> | <img src="https://github.com/taigacute/IMG/blob/master/spaceline/spaceline.png" width="480" height="300"> |
+| <img src="https://raw.githubusercontent.com/taigacute/IMG/master/thinkvim/thinkvim-ayu.png" width="480"  height="300"> | <img src="https://github.com/taigacute/IMG/blob/master/spaceline/spaceline.png" width="480" height="300"> |
 
 ## Feature
 
-- 🚀Fatest StartupTime(Plugins Total:62 40-60ms)
+- 🚀Fastest StartupTime(Plugins Total:62 40-60ms)
 - 💎Modular Plugin Config
 - ⚒ Easy to use Easy to hack
 - 🌟95% plugins lazyload with dein
@@ -42,14 +42,15 @@
     sudo apt-get install libjansson-dev
     # then compile and install ctags
     ```
-- Rouge : `sudo gem install rouge`
+- bat : [install bat](https://github.com/sharkdp/bat)
 
-## Install
+## Installation
 
 **_1._**
 
 ```
-git clone --depth=1 https://github.com/hardcoreplayers/ThinkVim.git ~/.config/nvim
+1. git clone --depth=1 https://github.com/hardcoreplayers/ThinkVim.git ~/.config/nvim
+2. make or open nvim
 ```
 
 - Note: If your system sets \$XDG_CONFIG_HOME, use that instead of ~/.config in the code above. Nvim follows the XDG base-directories convention.
@@ -67,7 +68,7 @@ git clone --depth=1 https://github.com/hardcoreplayers/ThinkVim.git ~/.config/nv
 | ------------------------------------------------------------------------- | --------------- |
 | [taigacute/spaceline.vim](https://github.com/taigacute/spaceline.vim)     | spaceline       |
 | [neoclide/coc.nvim](https://github.com/mengelbrecht/lightline-bufferline) | Autocompletaion |
-| [hona/vim-snippets](https://github.com/hona/vim-snippets)                 | Snippets        |
+
 
 </p>
 </details>
@@ -79,6 +80,7 @@ git clone --depth=1 https://github.com/hardcoreplayers/ThinkVim.git ~/.config/nv
 | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | [ludovicchabant/vim-gutentags](https://github.com/ludovicchabant/vim-gutentags)                       | Provide ctags/gtags                                                                |
 | [mhinz/vim-startify](https://github.com/mhinz/vim-startify)                                           | Startify                                                                           |
+| [hona/vim-snippets](https://github.com/hona/vim-snippets)                 | Snippets        |
 | [tyru/caw.vim](https://github.com/tyru/caw.vim)                                                       | Comment Plugins                                                                    |
 | [t9md/vim-choosewin](https://github.com/t9md/vim-choosewin)                                           | Easy to jump window                                                                |
 | [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons)                                   | Provide the Icons                                                                  |
