@@ -10,7 +10,10 @@
         let g:UltiSnipsListSnippets  = "<c-tab>"
         let g:UltiSnipsJumpForwardTrigger = "<c-j>"
         let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
-- repo: /home/khoa/development/vim-snippets
+        let g:UltiSnipsSnippetDirectories = ['/home/khoa/dev/vim-snippets/UltiSnips/']
+
+- repo: /home/khoa/dev/vim-snippets
+  depends : coc.nvim
 
 - repo: bagrat/vim-buffet
   hook_add: source $VIM_PATH/layers/+ui/buffet/config.vim
@@ -21,9 +24,6 @@
   merge: 0
   rev: release
   hook_add: source  $VIM_PATH/layers/+completion/coc/config.vim
-
-- repo: honza/vim-snippets
-  depends : coc.nvim
 # }}}
 
 
@@ -43,8 +43,6 @@
 - repo: ryanoasis/vim-devicons
   hook_add: let g:webdevicons_enable_denite = 1
 
-- { repo: rhysd/accelerated-jk, on_map: { n: <Plug> } }
-
 - repo: ludovicchabant/vim-gutentags
   if: executable('ctags')
   on_path: .*
@@ -55,16 +53,8 @@
   hook_source: source  $VIM_PATH/layers/+tools/choosewin/config.vim
 
 
-- repo: mhinz/vim-startify
-  on_cmd: Startify
-  depends: vim-devicons
-  hook_source: source  $VIM_PATH/layers/+ui/startify/config.vim
-  hook_post_source: |
-      function! StartifyEntryFormat()
-        return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
-      endfunction
 - repo: junegunn/vim-easy-align
-  on_ft: [vim,json,html,js,jsx,py,css,less,tmpl,toml,xml,sql,Dockerfile]
+  on_ft: [vim,json,cpp,c,rs,html,js,jsx,py,css,less,tmpl,toml,xml,sql,Dockerfile]
 
 
 - repo: yuttie/comfortable-motion.vim
@@ -72,7 +62,6 @@
   hook_add: |
         let g:comfortable_motion_no_default_key_mappings = 1
         let g:comfortable_motion_impulse_multiplier = 1
-
 
 - repo: thinca/vim-quickrun
   on_cmd: QuickRun
@@ -83,6 +72,7 @@
             \   },
             \}
         let g:quickrun_no_default_key_mappings = 1
+
 - {repo: simnalamburt/vim-mundo , on_map: { n: <Plug> } }
 
 - {repo: tpope/vim-repeat , on_map: .* }
@@ -95,6 +85,7 @@
         call which_key#register(';', 'g:which_key_localmap')
         call which_key#register(']', 'g:which_key_rsbgmap')
         call which_key#register('[', 'g:which_key_lsbgmap')
+
 - repo: easymotion/vim-easymotion
   on_map: { n: <Plug> }
   hook_source: |
@@ -122,44 +113,33 @@
 
 - repo: junegunn/fzf.vim
   depends: fzf
-  on_cmd: [Colors,Rg,Buffers]
+  on_cmd: [Rg,Buffers]
   on_func: Fzf_dev
   hook_source: source  $VIM_PATH/layers/+completion/fzf/config.vim
 
 # }}}
 
 # Git Plugins{{{
-- { repo: taigacute/magit.vim, on_cmd: Magit }
-
 - { repo: lambdalisue/gina.vim, on_cmd: Gina }
 
 - repo: chemzqm/vim-easygit
   on_cmd: [Gcd, Glcd, Gcommit, Gblame, Gstatus, Gdiff, Gbrowse, Gstatus, Gpush]
   hook_source: let g:easygit_enable_command = 1
 
-
-
 # }}}
 
 # Language{{{
 
-- { repo: honza/dockerfile.vim, on_ft: Dockerfile }
-
-- { repo: leafgarland/typescript-vim, on_ft: [typescript.tsx,typescript] }
-- { repo: peitalin/vim-jsx-typescript, on_ft: [typescript.tsx]}
-
+# Python {{{
 - { repo: Vimjas/vim-python-pep8-indent, on_ft: python }
 - { repo: tmhedberg/SimpylFold, on_ft: python }
 - { repo: vim-scripts/python_match.vim, on_ft: python }
 - repo: vim-python/python-syntax
   on_ft: python
   hook_add: let g:python_highlight_all = 1
-
-- { repo: neoclide/vim-jsx-improve, on_ft: [javascript,jsx,javascript.jsx]}
-
-- { repo: cespare/vim-toml, on_ft: toml }
+# }}}
+#
 - { repo: vim-scripts/xml.vim, on_ft: xml}
-- { repo: pearofducks/ansible-vim, on_ft: [ yaml.ansible, ansible_hosts ]}
 
 - repo: elzr/vim-json
   on_ft: json
@@ -174,13 +154,17 @@
           \ 'css',
           \ 'javascript',
           \ 'js=javascript',
+          \ 'py=python',
+          \ 'cpp=cpp',
+          \ 'rs=rust',
           \ ]
 
-- repo: /home/khoa/development/vimnw/
+- repo: /home/khoa/dev/vimnw/
   script_type: ftplugin
   hook_add: |
       let g:vimtex_enabled = 1
       let g:tex_flavor='latex'
+      let g:vimtex_view_method='zathura'
 
 # }}}
 
@@ -200,7 +184,6 @@
   on_cmd: [Vista,Vista!,Vista!!]
   hook_source: source  $VIM_PATH/layers/+tools/vista/config.vim
 
-
 - repo: mattn/emmet-vim
   on_ft: [html,css,jsx,javascript,javascript.jsx]
   on_event: InsertEnter
@@ -215,6 +198,7 @@
             \      'extends' : 'jsx',
             \  },
         \}
+
 - repo: luochen1990/rainbow
   on_ft: [python,javascript,jsx,javascript.jsx,html,css,vim,toml]
   hook_source: let g:rainbow_active = 1
@@ -224,6 +208,7 @@
   hook_source: |
         call echodoc#enable()
         let g:echodoc#type = "virtual"
+
 # - repo: w0rp/ale
 #   hook_add: source ~/.config/nvim/core/plugins/vim-ale.vim
 
@@ -236,12 +221,6 @@
   hook_source: |
       let g:mkdp_auto_start = 0
 
-- repo: junegunn/goyo.vim
-  on_cmd: Goyo
-  hook_source: source  $VIM_PATH/layers/+tools/goyo/config.vim
-
-- repo: junegunn/Limelight.vim
-  on_cmd: Limelight
 #}}}
 
 # TextObjectOperator{{{
@@ -251,20 +230,12 @@
 - { repo: kana/vim-operator-user, lazy: 1 }
 - { repo: kana/vim-niceblock, on_map: { x: <Plug> }}
 
+
 - repo: kana/vim-smartchr
   on_event: InsertCharPre
 
-- repo: kana/vim-operator-replace
-  depends: vim-operator-user
-  on_map: { vnx: <Plug> }
-
 - repo: machakann/vim-sandwich
   on_map: { vnx: [<Plug>(operator-sandwich-,<Plug>(textobj-sandwich-]}
-
-- repo: osyo-manga/vim-textobj-multiblock
-  depends: vim-textobj-user
-  on_map: { ox: <Plug> }
-  hook_add:  let g:textobj_multiblock_no_default_key_mappings = 1
 
 - repo: ntpeters/vim-better-whitespace
   hook_add: |
@@ -273,13 +244,4 @@
         let g:strip_whitespace_confirm = 0
 
 # }}}
-
-# CommentPLuins too old, or find much better plugins{{{
-# - repo: rhysd/vim-operator-surround
-#   depends: [vim-operator-user, vim-textobj-multiblock]
-#   on_map:  { vnx : <Plug> }
-# use coc-git instead of vim-gitgutter
-# - repo: airblade/vim-gitgutter
-#   on_path: .*
-#   hook_source: source ~/.config/nvim/core/plugins/vim-gitgutter.vim
 
