@@ -1,9 +1,6 @@
 "Plugin key settings
-
 if dein#tap('denite.nvim')
         nnoremap <silent><LocalLeader>m :<C-u>Denite menu<CR>
-        nnoremap <silent> <Leader>gl :<C-u>Denite gitlog:all<CR>
-	    nnoremap <silent> <Leader>gh :<C-u>Denite gitbranch<CR>
 endif
 
 if dein#tap('coc.nvim')
@@ -24,6 +21,8 @@ if dein#tap('coc.nvim')
         nnoremap <silent> <leader>ck  :<C-u>CocPrev<CR>
         " Resume latest coc list
         nnoremap <silent> <leader>cr  :<C-u>CocListResume<CR>
+        " Show Coc Yank
+        nnoremap <silent> <leader>cy  :<C-u>CocList -A --normal yank<cr>
         " Use `[c` and `]c` for navigate diagnostics
         nmap <silent> ]c <Plug>(coc-diagnostic-prev)
         nmap <silent> [c <Plug>(coc-diagnostic-next)
@@ -73,8 +72,7 @@ if dein#tap('coc.nvim')
             return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
         endfunc
 
-        nnoremap <silent> <leader>cm ::CocSearch -w 
-        nnoremap <silent> <leader>cw ::CocSearch  
+        nnoremap <silent> <leader>cw ::CocSearch
         " use normal command like `<leader>xi(`
         nmap <leader>x  <Plug>(coc-cursors-operator)
         " coc-explorer
@@ -85,7 +83,6 @@ if dein#tap('coc.nvim')
 endif
 
 if dein#tap('fzf.vim')
-        nnoremap <silent> <leader>fc :Colors<CR>
         nnoremap <silent> <leader>bb :Buffers<CR>
         nnoremap <silent> <leader>ff :call Fzf_dev()<CR>
         nnoremap <silent> <leader>fr :Rg<CR>
@@ -108,10 +105,6 @@ if dein#tap('vim-easygit')
 	" nnoremap <silent> <localleader>gp :Gpush<CR>
 endif
 
-if dein#tap('magit.vim')
-	nnoremap <silent> mg :Magit<CR>
-endif
-
 if dein#tap('gina.vim')
 	nnoremap <silent><Leader>gp :Gina push<CR>
 endif
@@ -123,11 +116,6 @@ endif
 if dein#tap('vim-choosewin')
 	nmap -         <Plug>(choosewin)
 	nmap <Leader>- :<C-u>ChooseWinSwapStay<CR>
-endif
-
-if dein#tap('accelerated-jk')
-	nmap <silent>j <Plug>(accelerated_jk_gj)
-	nmap <silent>k <Plug>(accelerated_jk_gk)
 endif
 
 if dein#tap('caw.vim')
@@ -159,10 +147,6 @@ endif
 if dein#tap('python_match.vim')
 	nmap <buffer> {{ [%
 	nmap <buffer> }} ]%
-endif
-
-if dein#tap('goyo.vim')
-	nnoremap <Leader>G :Goyo<CR>
 endif
 
 if dein#tap('defx.nvim')
@@ -229,6 +213,7 @@ if dein#tap('vim-niceblock')
 	xmap A  <Plug>(niceblock-A)
 endif
 
+
 if dein#tap('vim-sandwich')
      nmap <silent> sa <Plug>(operator-sandwich-add)
      xmap <silent> sa <Plug>(operator-sandwich-add)
@@ -247,15 +232,4 @@ if dein#tap('vim-sandwich')
      xmap is <Plug>(textobj-sandwich-query-i)
      omap as <Plug>(textobj-sandwich-query-a)
      xmap as <Plug>(textobj-sandwich-query-a)
-endif
-
-if dein#tap('vim-operator-replace')
-	xmap p <Plug>(operator-replace)
-endif
-
-if dein#tap('vim-textobj-multiblock')
-	omap <silent> ab <Plug>(textobj-multiblock-a)
-	omap <silent> ib <Plug>(textobj-multiblock-i)
-	xmap <silent> ab <Plug>(textobj-multiblock-a)
-	xmap <silent> ib <Plug>(textobj-multiblock-i)
 endif

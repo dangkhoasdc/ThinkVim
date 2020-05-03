@@ -33,7 +33,6 @@ let g:which_key_map = {
             \ 'w' : 'search cursorword',
             \ 'v' : 'search outline',
             \ },
-      \ 'm' : 'open mundotree' ,
       \ 'e' : 'open defx',
       \ 'w' : 'save file',
       \ 'j' : 'open coc-explorer',
@@ -55,8 +54,8 @@ let g:which_key_map = {
               \ 'name' : '+coc list' ,
               \ 'a'    : 'coc CodeActionSelected',
               \ 'd'    : 'coc Diagnostics',
-              \ 'c'    : 'coc Commands',
-              \ 'e'    : 'coc Extensions',
+              \ 'c'    : 'Open list of commands of Coco',
+              \ 'e'    : 'Open COC extensions',
               \ 'j'    : 'coc Next',
               \ 'k'    : 'coc Prev',
               \ 'o'    : 'coc OutLine',
@@ -65,7 +64,9 @@ let g:which_key_map = {
               \ 's'    : 'coc Isymbols',
               \ 'g'    : 'coc Gitstatus',
               \ 'f'    : 'coc Format',
-              \ 'm'    : 'coc search word to multiple cursors',
+              \ 'm'    : 'coc search <word> to multiple cursors',
+              \ 'w'    : 'coc search word to multiple cursors',
+              \ 'y'    : 'coc open Yank lists',
               \ },
       \ 'q' : {
             \ 'name' : '+coc-quickfix',
@@ -87,7 +88,6 @@ let g:which_key_map[' '] = {
 
 let g:which_key_localmap ={
       \ 'name' : '+LocalLeaderKey'  ,
-      \ 't'    : 'open tagbar show outline',
       \ 'v'    : 'open vista show outline',
       \ 'r'    : 'quick run',
       \ 'm'    : 'toolkit Menu',
