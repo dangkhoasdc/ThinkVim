@@ -41,8 +41,8 @@
     //git
     "git.enableGutters": false,
     "git.branchCharacter":"\uf408",
-    "git.addGlameToBufferVar": true,
-    "git.addGlameToVirtualText": false,
+    "git.addGBlameToBufferVar": true,
+    "git.addGBlameToVirtualText": false,
     "git.virtualTextPrefix": " ❯❯❯ ",
     "git.addedSign.hlGroup": "GitGutterAdd",
     "git.changedSign.hlGroup": "GitGutterChange",
@@ -89,6 +89,7 @@
     "eslint.autoFixOnSave": true,
     // python
     "python.jediEnabled": false,
+    "python.analysis.diagnosticEnabled": false,
     // add your languageServer into this list
     "languageserver": {
         },
