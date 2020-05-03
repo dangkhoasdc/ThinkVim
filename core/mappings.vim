@@ -21,7 +21,7 @@ cnoremap <C-t> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Write buffer (save)
 noremap <Leader>w :w<CR>
-imap <C-S> <esc>:w<CR>
+imap <C-S> <esc>:update<CR>
 imap <C-Q> <esc>:wq<CR>
 
 "insert a newline
@@ -51,7 +51,7 @@ noremap <leader>tm :tabmove
 
 "buffer
 nnoremap <leader>bc :BufOnly<CR>
-nnoremap <Leader>bo :BufOnly 
+nnoremap <Leader>bo :BufOnly
 "yank to end
 nnoremap Y y$
 
