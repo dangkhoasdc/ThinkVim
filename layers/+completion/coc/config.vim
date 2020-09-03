@@ -3,7 +3,14 @@ let g:coc_snippet_next = '<TAB>'
 let g:coc_snippet_prev = '<S-TAB>'
 let g:coc_status_error_sign = 'x'
 let g:coc_status_warning_sign = '•'
-let g:coc_global_extensions = ['coc-html','coc-css','coc-snippets','coc-prettier','coc-eslint','coc-emmet','coc-pairs','coc-json','coc-python','coc-highlight','coc-git','coc-lists','coc-stylelint','coc-yaml','coc-gitignore','coc-yank']
+let g:coc_global_extensions = [
+            \ 'coc-snippets',
+            \ 'coc-json',
+            \ 'coc-python',
+            \ 'coc-git',
+            \ 'coc-lists',
+            \ 'coc-yank'
+            \ ]
 
 augroup MyAutoCmd
   autocmd!
@@ -15,16 +22,12 @@ augroup end
 
 "Use tab for trigger completion with characters ahead and navigate
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-"inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-

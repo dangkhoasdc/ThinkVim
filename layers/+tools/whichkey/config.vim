@@ -18,8 +18,6 @@ let g:which_key_map = {
       \ 'b' : {
             \ 'name' : '+buffer',
             \ 'b' : 'buffer list',
-            \ 'c' : 'keep current buffer',
-            \ 'o' : 'keep input buffer',
             \ },
       \ '-' : 'choose window by {prompt char}' ,
       \ 'd' : 'search cursor word on Dash.app' ,
@@ -39,17 +37,6 @@ let g:which_key_map = {
       \ 's' : 'open startify screen',
       \ 'p' : 'edit pluginsconfig {filename}',
       \ 'x' : 'coc cursors operate',
-      \ 'g'  :{
-                \'name':'+git-operate',
-                \ 'd'    : 'Gdiff',
-                \ 'c'    : 'Gcommit',
-                \ 'b'    : 'Gblame',
-                \ 'B'    : 'Gbrowse',
-                \ 'S'    : 'Gstatus',
-                \ 'p'    : 'git push',
-                \ 'l'    : 'GitLogAll',
-                \ 'h'    : 'GitBranch',
-                \},
       \ 'c'    : {
               \ 'name' : '+coc list' ,
               \ 'a'    : 'coc CodeActionSelected',
@@ -78,7 +65,8 @@ let g:which_key_map = {
             \ 'e' : 'edit tab',
             \ 'm' : 'move tab',
             \ },
-      \ }
+      \ '?' : 'Open cheatsheet',
+    \ }
 let g:which_key_map[' '] = {
       \ 'name' : '+easymotion-jumpto-word ' ,
       \ 'b' : ['<plug>(easymotion-b)' , 'beginning of word backward'],
@@ -86,11 +74,19 @@ let g:which_key_map[' '] = {
       \ 'w' : ['<plug>(easymotion-w)' , 'beginning of word forward'],
       \ }
 
+let g:which_key_map.s = {
+            \ 'name': 'surroundings',
+            \ 'a': 'add',
+            \ 'd': 'delete',
+            \ 'r': 'replace',
+            \ }
+
+
 let g:which_key_localmap ={
-      \ 'name' : '+LocalLeaderKey'  ,
-      \ 'v'    : 'open vista show outline',
-      \ 'r'    : 'quick run',
-      \ 'm'    : 'toolkit Menu',
+      \ 'name': '+LocalLeaderKey'  ,
+      \ 'v':    'open vista show outline',
+      \ 'r':    'quick run',
+      \ 'm':    'toolkit Menu',
       \ }
 
 let g:which_key_rsbgmap = {
@@ -109,6 +105,8 @@ let g:which_key_lsbgmap = {
       \ 'b'    : 'pre buffer',
       \ 'g'    : 'coc gitprevchunk',
       \ }
+
+let g:which_key_floating_relative_win = 1
 
 let s:current_colorscheme = get(g:,"colors_name","")
 if  s:current_colorscheme == "base16-default-dark"

@@ -1,6 +1,5 @@
 let g:etc#package_manager = get(g:, 'etc#package_manager', 'dein')
 
-
 let g:etc#vim_path =
 	\ get(g:, 'etc#vimpath',
 	\   exists('*stdpath') ? stdpath('config') :
@@ -22,7 +21,7 @@ let g:etc#config_paths = get(g:, 'etc#config_paths', [
 	\ 'vimrc.json',
 	\ ])
 
-function! s:check_custom_settings(filename)abort
+function! s:check_custom_settings(filename) abort
        let  content = readfile(a:filename)
        if empty(content)
            return v:false

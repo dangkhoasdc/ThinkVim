@@ -16,9 +16,10 @@ endif
 let $DATA_PATH = g:etc#cache_path
 
 
+" Most of the time I open files remotely, better to reduce heavy load
 augroup MyAutoCmd
 	autocmd!
-	autocmd CursorHold *? syntax sync minlines=300
+	autocmd CursorHold *? syntax sync minlines=100
 augroup END
 
 " Disable vim distribution plugins
@@ -115,6 +116,7 @@ function! s:source_custom(path, ...) abort
     endif
   endtry
 endfunction
+
 " Load user custom local settings
 if filereadable(s:user_settings_path)
 	if s:check_custom_settings(s:user_settings_path)
@@ -124,5 +126,4 @@ endif
 
 
 set secure
-
 " vim: set ts=2 sw=2 tw=80 noet :

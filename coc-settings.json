@@ -36,7 +36,7 @@
     "diagnostic.signOffset": 9999999,
 	"diagnostic.errorSign": "●",
 	"diagnostic.warningSign": "●",
-    "diagnostic.displayByAle": false,
+    "diagnostic.displayByAle": true,
     "diagnostic.refreshOnInsertMode": true,
     //git
     "git.enableGutters": false,
@@ -59,39 +59,24 @@
     //CocList
     "list.source.files.defaultOptions": ["--auto-preview"],
     "list.source.outline.defaultOptions": ["--auto-preview"],
-    //prettier
-    "coc.preferences.formatOnSaveFiletypes": ["css","markdown"],
-    "prettier.statusItemText": "ⓟ ",
-    "prettier.eslintIntegration": true,
-    "prettier.tslintIntegration": true,
-    "prettier.stylelintIntegration": true,
-    //emmet
-    "emmet.includeLanguages": {"vue-html": "html", "javascript": "javascriptreact"},
-    //imselect
-    "imselect.enableStatusItem": false,
     //multiple curssors
     "cursors.nextKey": "<C-n>",
     "cursors.previousKey": "<C-p>",
     "cursors.cancelKey": "<esc>",
     //sessions
     "session.directory": "~/.cache/vim/session",
-    // coc-explorer
-    "explorer.icon.expanded": "▾",
-    "explorer.icon.shrinked": "▸",
-    "explorer.width": 30,
-    "explorer.icon.enableNerdfont": true,
-    "explorer.keyMappings": {
-        "l" : "expandOrShrink"
-    },
-    // eslint
-    "eslint.filetypes": ["javascript", "javascript.jsx", "javascriptreact"],
-    "eslint.autoFix": true,
-    "eslint.autoFixOnSave": true,
     // python
     "python.jediEnabled": false,
-    "python.analysis.diagnosticEnabled": false,
+    "python.analysis.diagnosticEnabled": true,
     // add your languageServer into this list
     "languageserver": {
         },
-    "highlight.disableLanguages": ["git"]
+    "highlight.disableLanguages": ["git"],
+    // coc-yank
+    "yank.enableCompletion": false,
+    // coc-snippets
+    "snippets.ultisnips.directories": [
+        "/home/khoa/dev/vim-snippets/UltiSnips/"
+    ],
+    "snippets.loadFromExtensions": false
 }

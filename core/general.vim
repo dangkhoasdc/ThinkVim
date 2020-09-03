@@ -9,35 +9,25 @@ set autowrite
 set confirm
 set splitbelow
 set bsdir=buffer
+
 if has('vim_starting')
 	set encoding=UTF-8
 	scriptencoding UTF-8
 endif
+
 set laststatus=2
 set showtabline=2
 set statusline=-        " hide file name in statusline
 set fillchars+=vert:\|  " add a bar for vertical splits
+
 if get(g:,'gruvbox_transp_bg',1)
- set fcs=eob:\           " hide ~
-endif
-if has('mac')
-	let g:clipboard = {
-		\   'name': 'macOS-clipboard',
-		\   'copy': {
-		\      '+': 'pbcopy',
-		\      '*': 'pbcopy',
-		\    },
-		\   'paste': {
-		\      '+': 'pbpaste',
-		\      '*': 'pbpaste',
-		\   },
-		\   'cache_enabled': 0,
-		\ }
+    set fcs=eob:\           " hide ~
 endif
 
 if has('clipboard')
 	set clipboard& clipboard+=unnamedplus
 endif
+
 set history=2000
 set number
 set timeout ttimeout
@@ -50,6 +40,7 @@ set undodir=~/.tmp/undo
 set relativenumber
 set backspace=2
 set backspace=indent,eol,start
+
 " Tabs and Indents {{{
 " ----------------
 set expandtab
@@ -61,6 +52,7 @@ set autoindent
 set smartindent
 set shiftround
 " }}}
+"
 set hidden
 set shortmess=aFc
 set signcolumn=yes

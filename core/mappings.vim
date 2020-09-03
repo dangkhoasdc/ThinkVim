@@ -29,10 +29,8 @@ inoremap <C-O> <Esc>o
 
 nnoremap  ]b :bp<CR>
 nnoremap  [b :bn<CR>
-"delete buffer
-nnoremap <C-x>  :bd<CR>
 
-"switch windw
+"switch window
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap <C-j> <C-w>j
@@ -49,9 +47,6 @@ noremap <leader>tn :tabnew<cr>
 noremap <leader>te :tabedit
 noremap <leader>tm :tabmove
 
-"buffer
-nnoremap <leader>bc :BufOnly<CR>
-nnoremap <Leader>bo :BufOnly
 "yank to end
 nnoremap Y y$
 

@@ -74,20 +74,6 @@ highlight def link Defx_filename_3_Unmerged Label
 " ---------------------------------------------------------
 highlight BufTabLineCurrent ctermbg=96 guibg=#5d4d7a
 
-" magit highlight
-" ---------------------------------------------------------
-highlight  gitInfoRepotitle    guibg=NONE guisp=NONE gui=bold cterm=bold
-highlight  gitInfoHeadtitle   guibg=NONE guisp=NONE gui=bold cterm=bold
-highlight  gitInfoUpstreamtitle  guibg=NONE guisp=NONE gui=bold cterm=bold
-highlight  gitInfoPushtitle   guibg=NONE guisp=NONE gui=bold cterm=bold
-highlight  gitCommitModetitle  guibg=NONE guisp=NONE gui=bold cterm=bold
-
-highlight  gitSectionsStaged guifg=#0087d7 guibg=NONE guisp=NONE gui=bold cterm=bold
-highlight  gitSectionsUnstaged guifg=#0087d7 guibg=NONE guisp=NONE gui=bold cterm=bold
-highlight  gitSectionsCommitMsg guifg=#0087d7 guibg=NONE guisp=NONE gui=bold cterm=bold
-highlight  gitSectionsCommitStash  guifg=#0087d7 guibg=NONE guisp=NONE gui=bold cterm=bold
-highlight  gitSectionsRecentCommit guifg=#0087d7 guibg=NONE guisp=NONE gui=bold cterm=bold
-
 " tsx highlight
 " ---------------------------------------------------------
 " dark red

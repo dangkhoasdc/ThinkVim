@@ -13,5 +13,5 @@ let g:ale_lintetrs = {
       \'less': ['prettier'],
       \ }
 
-"highlight clear ALEErrorSign
-"highlight clear ALEWarningSign
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign

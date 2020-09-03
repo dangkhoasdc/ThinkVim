@@ -20,8 +20,6 @@ augroup MyAutoCmd
 
     " HTML (.gohtml and .tpl for server side)
     autocmd BufNewFile,BufRead *.html,*.htm,*.gohtml,*.tpl  setf html
-    " Magit
-     autocmd User VimagitEnterCommit startinsert
 
 	" https://webpack.github.io/docs/webpack-dev-server.html#working-with-editors-ides-supporting-safe-write
 	autocmd FileType css,javascript,jsx,javascript.jsx setlocal backupcopy=yes

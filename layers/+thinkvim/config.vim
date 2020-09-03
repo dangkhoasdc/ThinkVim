@@ -62,8 +62,6 @@ if dein#tap('coc.nvim')
         nmap <expr> <silent> <C-m> <SID>select_current_word()
         xmap <silent> <C-d> <Plug>(coc-cursors-range)
         nnoremap <silent> <leader>cm ::CocSearch -w
-        " use normal command like `<leader>xi(`
-        nmap <leader>x  <Plug>(coc-cursors-operator)
 
         function! s:select_current_word()
             if !get(g:, 'coc_cursors_activated', 0)
@@ -72,14 +70,8 @@ if dein#tap('coc.nvim')
             return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
         endfunc
 
-        nnoremap <silent> <leader>cw ::CocSearch
         " use normal command like `<leader>xi(`
         nmap <leader>x  <Plug>(coc-cursors-operator)
-        " coc-explorer
-        noremap <silent> <leader>j :execute 'CocCommand explorer' .
-            \ ' --toggle' .
-            \ ' --sources=buffer+,file+' .
-            \ ' --file-columns=git,selection,icon,clip,indent,filename,size ' . expand('%:p:h')<CR>
 endif
 
 if dein#tap('fzf.vim')
@@ -105,17 +97,8 @@ if dein#tap('vim-easygit')
 	" nnoremap <silent> <localleader>gp :Gpush<CR>
 endif
 
-if dein#tap('gina.vim')
-	nnoremap <silent><Leader>gp :Gina push<CR>
-endif
-
 if dein#tap('vim-mundo')
     nnoremap <silent> <F2> :MundoToggle<CR>
-endif
-
-if dein#tap('vim-choosewin')
-	nmap -         <Plug>(choosewin)
-	nmap <Leader>- :<C-u>ChooseWinSwapStay<CR>
 endif
 
 if dein#tap('caw.vim')
@@ -144,11 +127,6 @@ if dein#tap('comfortable-motion.vim')
     nnoremap <silent> <C-b> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -4)<CR>
 endif
 
-if dein#tap('python_match.vim')
-	nmap <buffer> {{ [%
-	nmap <buffer> }} ]%
-endif
-
 if dein#tap('defx.nvim')
         nnoremap <silent> <F3>
                \ :<C-u>Defx -resume -toggle -buffer-name=tab`tabpagenr()`<CR>
@@ -156,10 +134,6 @@ if dein#tap('defx.nvim')
 				\ :<C-u>Defx -resume -toggle -search=`expand('%:p')` `getcwd()`<CR>
 endif
 
-
-if dein#tap('vim-startify')
-    nnoremap <silent> <leader>s :Startify<CR>
-endif
 
 if dein#tap('vim-quickrun')
     nnoremap <silent> <localleader>r :QuickRun<CR>
@@ -200,14 +174,6 @@ if dein#tap('vim-which-key')
 		nnoremap <silent>]              :<c-u>WhichKey  ']'<CR>
 endif
 
-if dein#tap('vim-smartchr')
-    inoremap <expr> , smartchr#one_of(',', ',')
-    autocmd FileType go inoremap <buffer><expr> ;
-            \ smartchr#loop(':=',';')
-    autocmd FileType go inoremap <buffer> <expr> .
-          \ smartchr#loop('.', '<-', '->','...')
-endif
-
 if dein#tap('vim-niceblock')
 	xmap I  <Plug>(niceblock-I)
 	xmap A  <Plug>(niceblock-A)
@@ -232,4 +198,12 @@ if dein#tap('vim-sandwich')
      xmap is <Plug>(textobj-sandwich-query-i)
      omap as <Plug>(textobj-sandwich-query-a)
      xmap as <Plug>(textobj-sandwich-query-a)
+endif
+
+if dein#tap('vim-buffet')
+    nnoremap <C-x> :Bw<CR>
+endif
+
+if dein#tap('vim-cheat40')
+    nmap <unique> <leader>? :<c-u>Cheat40<cr>
 endif
